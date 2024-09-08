@@ -1,6 +1,7 @@
 export default  function binarySearch(search, values, comparefunc = null) {
   let min = 0;
   let max = values.length - 1;
+  let middle;
   let iterations = 0;
 
   if (comparefunc === null) {
@@ -13,12 +14,10 @@ export default  function binarySearch(search, values, comparefunc = null) {
 
   while (min <= max) {
     iterations++; 
-    let middle = Math.floor((min + max) / 2);
+    middle = Math.floor((min + max) / 2);
     let comparison = comparefunc(values[middle], search);
 
     if (comparison === 0) {
-
-      console.log(`Antal iterationer: ${iterations}`);
       return middle;
     } else if (comparison < 0) {
 

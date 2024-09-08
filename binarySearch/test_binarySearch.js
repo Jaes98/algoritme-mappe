@@ -1,13 +1,16 @@
 import { binarySearch } from "./binarySearch";
 
-window.addEventListener("load", start);
-
 const values = [21, 22, 23, 25, 27, 28, 29, 31, 32, 34, 35];
 
-function start() {
+export default function testBinarySearch() {
+  console.log("Starting binary search tests...");
+
   let index = binarySearch(34, values);
-  console.log(`Found 27 at index ${index}`);
+  console.log(`Found 34 at index ${index}`);
 
   index = binarySearch(100, values);
   console.log(`Found 100 at index ${index}`);
+
+  index = binarySearch(23, values);
+  console.log(`Found 23 at index ${index}`);
 }
